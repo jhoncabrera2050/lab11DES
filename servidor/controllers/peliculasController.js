@@ -11,4 +11,18 @@ exports.crearPelicula = async (req, res) => {
     }
 }
 
+exports.obtenerPelicula = async (req, res) => {
+
+    try {
+
+        const pelicula = await Peliculas.find();
+        res.json(pelicula);
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Hubo un error');
+    }
+
+}
+
 
