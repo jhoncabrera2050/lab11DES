@@ -9,7 +9,6 @@ exports.crearUsuario = async (req, res) => {
     //console.log(user)
 
     try {
-        
         const { username, email, password } = req.body;
         const user = new User(
             {
@@ -18,8 +17,6 @@ exports.crearUsuario = async (req, res) => {
                password
             } 
          );
-
-        
         user.password = await user.encryptPassword(user.password)
         await user.save();
 

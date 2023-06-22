@@ -16,7 +16,7 @@ app.use('/api/productos', require('./routes/producto'));
 app.use('/api/tienda', require('./routes/tienda'));
 app.use('/api/login', require('./routes/usuario'));
 app.use('/api/create-user', require('./routes/usuario'));
-
+app.use('/api/peliculas', require('./routes/peliculas'));
 
 
 app.listen(config.port, () => {
