@@ -45,5 +45,3 @@ exports.eliminarPelicula = async (req, res) => {
     }
 
 }
-
-

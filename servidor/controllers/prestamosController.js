@@ -2,7 +2,6 @@ const Prestamo = require("../models/Prestamos");
 const Pelicula = require("../models/Peliculas");
 const Socio = require("../models/Socio");
 
-
 exports.realizarPrestamo = async (req, res) => {
   try {
     const socioId = req.body.socio;
@@ -54,7 +53,6 @@ exports.obtenerPelicula = async (req, res) => {
       console.log(error);
       res.status(500).send('Hubo un error');
   }
-
 }
 
 exports.obtenerSocio = async (req, res) => {
@@ -67,7 +65,6 @@ exports.obtenerSocio = async (req, res) => {
       console.log(error);
       res.status(500).send('Hubo un error');
   }
-
 }
 
 exports.eliminarPrestamo = async (req, res) => {
@@ -88,5 +85,4 @@ exports.eliminarPrestamo = async (req, res) => {
       console.log(error);
       res.status(500).send('Hubo un error');
   }
-
 }
