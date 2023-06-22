@@ -15,6 +15,8 @@ import { EditarProductosComponent } from './pages/productos/editar-productos/edi
 import { TiendasComponent } from './pages/tiendas/tiendas.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { FormsModule } from '@angular/forms';
+import { CrearPeliculasComponent } from './pages/peliculas/crear-peliculas/crear-peliculas.component';
+import { EditarPeliculasComponent } from './pages/peliculas/editar-peliculas/editar-peliculas.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     CrearProductosComponent,
     NavbarComponent,
     EditarProductosComponent,
-    TiendasComponent
+    TiendasComponent,
+    CrearPeliculasComponent,
+    EditarPeliculasComponent
   ],
   imports: [
     BrowserModule,
