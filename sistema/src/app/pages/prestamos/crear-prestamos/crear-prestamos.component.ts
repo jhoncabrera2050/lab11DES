@@ -29,6 +29,7 @@ export class CrearPrestamosComponent implements OnInit {
   ngOnInit() {
     this.obtenerPeliculas();
     this.obtenerSocios();
+    this.realizarPrestamo();
   }
 
   obtenerPeliculas() {

@@ -2,34 +2,29 @@ const Prestamo = require("../models/Prestamos");
 const Pelicula = require("../models/Peliculas");
 const Socio = require("../models/Socio");
 
+
 exports.realizarPrestamo = async (req, res) => {
   try {
-    console.log(req.body);
     const socioId = req.body.socio;
     const peliculaId = req.body.pelicula;
-    console.log(socioId, peliculaId)
+
     const [pelicula, socio] = await Promise.all([
-      Pelicula.findById(peliculaId).lean(),
-      Socio.findById(socioId).lean()
+      Pelicula.findById(peliculaId),
+      Socio.findById(socioId)
     ]);
 
-    if (!pelicula || !socio) {
-      return res.status(404).json({ error: "Película o socio no encontrado" });
-    }
-
-    if (!pelicula.disponible) {
-      return res.status(400).json({ error: "La película no está disponible" });
-    }
+    console.log(pelicula, socio)
 
     const prestamo = new Prestamo({
       pelicula: peliculaId,
-      socio: socioId
+      socio: socioId,
+      fechaDevolucion: req.body.fechaDevolucion
     });
-
-    await prestamo.save();
     console.log(prestamo)
-    pelicula.disponible = false;
-    await pelicula.save();
+    await prestamo.save();
+
+    console.log(prestamo)
+    await Pelicula.findByIdAndUpdate(peliculaId, { disponible: false });
 
     res.json(prestamo);
   } catch (error) {
@@ -37,6 +32,9 @@ exports.realizarPrestamo = async (req, res) => {
     res.status(500).send("Hubo un error");
   }
 };
+
+
+
 
 exports.listarPrestamos = async (req, res) => {
   try {
