@@ -15,7 +15,7 @@ const PeliculaSchema = mongoose.Schema({
         require: true
     },
     actores: {
-        type: Number,
+        type: String,
         require: true
     },
     fechaCreacion: {

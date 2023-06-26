@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<section class="content">
+    <div class="container-fluid">
+      <div class="row m-t-sm">
+        <div class="col-md-15">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="col-md-12 col-sm-12" id="form" style="display:block;">
+                        <div class="panel panel-filled">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12"><h5 class="m-t-xs">Ingreso de Socios</h5></div>
+                                </div>
+                                <form [formGroup]="socioForm" (ngSubmit)="agregarSocio()">
+                                    <div class="form-group">
+                                        <label>nombre</label>
+                                        <input type="text" formControlName="nombre"
+                                            class="form-control" placeholder="Ingresar el nombre">
+                                        <div class="text-danger"
+                                            *ngIf="socioForm.get('nombre')?.hasError('required') && 
+                                                    socioForm.get('nombre')?.touched">
+                                            <span>El nombre <strong>es obligatorio</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>direccion</label>
+                                        <input type="text" formControlName="direccion" 
+                                            class="form-control" placeholder="Ingresar la direccion">
+                                        <div class="text-danger"
+                                            *ngIf="socioForm.get('direccion')?.hasError('required') && 
+                                                    socioForm.get('direccion')?.touched">
+                                            <span>La direccion <strong>es obligatoria</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>telefono</label>
+                                        <input type="text" formControlName="telefono" 
+                                            class="form-control" placeholder="Ingresar el  telefono">
+                                        <div class="text-danger"
+                                            *ngIf="socioForm.get('telefono')?.hasError('required') && 
+                                                    socioForm.get('telefono')?.touched">
+                                            <span>El telefono <strong>es obligatoria</strong></span>
+                                        </div>
+                                    </div>
+                                    <div  class="col-sm-12 text-right">
+                                        <div class="panel-body buttons-margin">
+                                           <button type="submit" [disabled]="socioForm.invalid"  class="btn btn-w-md btn-success">Guardar</button>&nbsp;&nbsp;
+                                           <button class="btn btn-w-md btn-warning" routerLink="/listar-productos">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+      </div>
+    </div>
+  </section>

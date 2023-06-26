@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="row m-t-sm">
+      <div class="col-md-12">
+        <div class="panel">
+          <div class="panel-body">
+            <div class="col-md-12 col-sm-12" id="form" style="display:block;">
+              <div class="panel panel-filled">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-sm-12"><h5 class="m-t-xs">Ingreso de Préstamo</h5></div>
+                  </div>
+                  <form [formGroup]="prestamosForm" (ngSubmit)="realizarPrestamo()">
+                    <div class="form-group">
+                      <label>Película:</label>
+                      <select formControlName="pelicula" class="form-control">
+                        <option *ngFor="let pelicula of peliculas" [value]="pelicula._id">{{ pelicula.titulo }}</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Socio:</label>
+                      <select formControlName="socio" class="form-control">
+                        <option *ngFor="let socio of socios" [value]="socio._id">{{ socio.nombre }}</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Fecha de Préstamo:</label>
+                      <input type="date" formControlName="fechaPrestamo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Fecha de Devolución:</label>
+                      <input type="date" formControlName="fechaDevolucion" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

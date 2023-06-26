@@ -6,14 +6,23 @@ import { ListarProductosComponent } from './pages/productos/listar-productos/lis
 import { CreateUserComponent } from './pages/users/create-user/create-user.component';
 import { LoginComponent } from './pages/users/login/login.component';
 import { TiendasComponent } from './pages/tiendas/tiendas.component';
+import { CrearPeliculasComponent } from './pages/peliculas/crear-peliculas/crear-peliculas.component';
+import { CrearSociosComponent } from './pages/socios/crear-socios/crear-socios.component';
+import { ListarPeliculasComponent } from './pages/peliculas/listar-peliculas/listar-peliculas.component';
+import { CrearPrestamosComponent } from './pages/prestamos/crear-prestamos/crear-prestamos.component';
+
 
 const routesInicio: Routes = [
   { path: '', component: LoginComponent },
   { path: 'crear-usuario', component: CreateUserComponent },
   { path: 'listar-productos', component: ListarProductosComponent },
+  { path: 'listar-peliculas', component: ListarPeliculasComponent },
   { path: 'crear-productos', component: CrearProductosComponent },
   { path: 'editar-producto/:id', component: EditarProductosComponent },
   { path: 'tiendas', component: TiendasComponent },
+  { path: 'crear-pelicula', component: CrearPeliculasComponent },
+  { path: 'crear-socios', component: CrearSociosComponent },
+  { path: 'crear-prestamos', component: CrearPrestamosComponent},
   { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

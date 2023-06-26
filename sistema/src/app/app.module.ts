@@ -18,6 +18,12 @@ import { FormsModule } from '@angular/forms';
 import { CrearPeliculasComponent } from './pages/peliculas/crear-peliculas/crear-peliculas.component';
 import { EditarPeliculasComponent } from './pages/peliculas/editar-peliculas/editar-peliculas.component';
 
+import { CrearSociosComponent } from './pages/socios/crear-socios/crear-socios.component';
+import { ListarSociosComponent } from './pages/socios/listar-socios/listar-socios.component';
+import { ListarPeliculasComponent } from './pages/peliculas/listar-peliculas/listar-peliculas.component';
+import { CrearPrestamosComponent } from './pages/prestamos/crear-prestamos/crear-prestamos.component';
+import { ListarPrestamosComponent } from './pages/prestamos/listar-prestamos/listar-prestamos.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +36,15 @@ import { EditarPeliculasComponent } from './pages/peliculas/editar-peliculas/edi
     EditarProductosComponent,
     TiendasComponent,
     CrearPeliculasComponent,
-    EditarPeliculasComponent
+    EditarPeliculasComponent,
+    CrearSociosComponent,
+    ListarSociosComponent,
+    ListarPeliculasComponent,
+    CrearPrestamosComponent,
+    ListarPrestamosComponent,
+
+
+
   ],
   imports: [
     BrowserModule,

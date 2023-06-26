@@ -5,14 +5,12 @@ export class Pelicula {
     genero: string;
     director: string;
     actores: string;
-    fechaCreacion: number;
 
-    constructor(titulo:string, genero:string, director: string, actores: string, fechaCreacion: number){
+    constructor(titulo:string, genero:string, director: string, actores: string){
         this.titulo = titulo;
         this.genero = genero;
         this.director = director;
-        this.actores = actores;
-        this.fechaCreacion = fechaCreacion;
+        this.actores = actores
     }
 
 }
