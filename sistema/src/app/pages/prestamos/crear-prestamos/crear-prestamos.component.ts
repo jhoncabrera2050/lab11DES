@@ -68,7 +68,7 @@ export class CrearPrestamosComponent implements OnInit {
       this.prestamosService.guardarPrestamo(prestamo).subscribe(
         (response) => {
           console.log(response);
-          this.router.navigate(['/listar-productos']);
+          this.router.navigate(['/listar-prestamos']);
         },
         (error) => {
           console.error(error);

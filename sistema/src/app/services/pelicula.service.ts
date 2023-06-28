@@ -29,4 +29,7 @@ export class PeliculaService {
   actualizarPelicula(id: string, pelicula: Pelicula): Observable<any> {
     return this.http.put(this.url + id, pelicula);
   }
+  deletePelicula(id: string): Observable<any> {
+    return this.http.delete(this.url + id);
+  }
 }

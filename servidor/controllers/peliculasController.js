@@ -25,4 +25,25 @@ exports.obtenerPelicula = async (req, res) => {
 
 }
 
+exports.eliminarPelicula = async (req, res) => {
+
+    try {
+
+        let pelicula = await Peliculas.findById(req.params.id);
+
+        if(!pelicula){
+            res.status(404).json({ msg: 'No existe la pelicula'});
+        }
+
+        pelicula = await Peliculas.findOneAndRemove(req.params.id);
+
+        res.json({ msg: 'La pelicula: ' + pelicula.pelicula + ' se ha eliminado' });
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Hubo un error');
+    }
+
+}
+
 
