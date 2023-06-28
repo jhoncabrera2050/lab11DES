@@ -10,6 +10,7 @@ import { CrearPeliculasComponent } from './pages/peliculas/crear-peliculas/crear
 import { CrearSociosComponent } from './pages/socios/crear-socios/crear-socios.component';
 import { ListarPeliculasComponent } from './pages/peliculas/listar-peliculas/listar-peliculas.component';
 import { CrearPrestamosComponent } from './pages/prestamos/crear-prestamos/crear-prestamos.component';
+import { ListarPrestamosComponent } from './pages/prestamos/listar-prestamos/listar-prestamos.component';
 
 
 const routesInicio: Routes = [
@@ -23,6 +24,7 @@ const routesInicio: Routes = [
   { path: 'crear-pelicula', component: CrearPeliculasComponent },
   { path: 'crear-socios', component: CrearSociosComponent },
   { path: 'crear-prestamos', component: CrearPrestamosComponent},
+  { path: 'listar-prestamos', component: ListarPrestamosComponent},
   { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

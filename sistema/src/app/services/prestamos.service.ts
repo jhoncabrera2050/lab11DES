@@ -21,4 +21,9 @@ export class PrestamosService {
   guardarPrestamo(prestamos: Prestamos): Observable<any> {
     return this.http.post(this.url + 'prestamos', prestamos);
   }
+
+  getPrestamos(): Observable<any> {
+    const prestamosUrl = this.url + 'listar'; // Agrega la ruta 'peliculas' al final de la URL
+    return this.http.get(prestamosUrl);
+  }
 }

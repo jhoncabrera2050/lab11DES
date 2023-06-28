@@ -8,4 +8,5 @@ router.post('/prestamos', prestamoController.realizarPrestamo);
 router.get('/peliculas', prestamoController.obtenerPelicula);
 router.get('/', prestamoController.listarPrestamos);
 router.get('/socios', prestamoController.obtenerSocio);
+router.get('/listar', prestamoController.listarPrestamos);
 module.exports = router;
