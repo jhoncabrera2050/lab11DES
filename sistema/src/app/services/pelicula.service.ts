@@ -14,10 +14,6 @@ export class PeliculaService {
     return this.http.get(this.url);
   }
 
-  deleteProducto(id: string): Observable<any> {
-    return this.http.delete(this.url + id);
-  }
-
   guardarPelicula(pelicula: Pelicula): Observable<any> {
     return this.http.post(this.url, pelicula);
   }
