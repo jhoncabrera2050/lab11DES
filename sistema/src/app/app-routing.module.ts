@@ -11,6 +11,7 @@ import { CrearSociosComponent } from './pages/socios/crear-socios/crear-socios.c
 import { ListarPeliculasComponent } from './pages/peliculas/listar-peliculas/listar-peliculas.component';
 import { CrearPrestamosComponent } from './pages/prestamos/crear-prestamos/crear-prestamos.component';
 import { ListarPrestamosComponent } from './pages/prestamos/listar-prestamos/listar-prestamos.component';
+import { ListarSociosComponent } from './pages/socios/listar-socios/listar-socios.component';
 
 
 const routesInicio: Routes = [
@@ -23,6 +24,7 @@ const routesInicio: Routes = [
   { path: 'tiendas', component: TiendasComponent },
   { path: 'crear-pelicula', component: CrearPeliculasComponent },
   { path: 'crear-socios', component: CrearSociosComponent },
+  { path: 'listar-socios', component: ListarSociosComponent },
   { path: 'crear-prestamos', component: CrearPrestamosComponent},
   { path: 'listar-prestamos', component: ListarPrestamosComponent},
   { path: '**', redirectTo: '', pathMatch: 'full'}
