@@ -21,28 +21,48 @@ export class ListarPrestamosComponent {
     this.obtenerPrestamos();
 
   }
+
   openPdfTables() {
-    
+    const tableHeader = [
+      { text: 'pelicula', bold: true },
+      { text: 'socio', bold: true },
+      { text: 'fechaPrestamo', bold: true },
+      { text: 'fechaDevolucion', bold: true }
+    ];
+  
+    const tableBody = this.listPrestamos.map((prestamo) => [
+      prestamo.pelicula,
+      prestamo.socio,
+      prestamo.fechaPrestamo,
+      prestamo.fechaDevolucion
+    ]);
+  
     const documentDefinition: any = {
       content: [
         {
+          text: 'Prestamos',
+          style: 'title',
+          alignment: 'center'  // Alineación centrada
+        },
+        {
           table: {
-            
             headerRows: 1,
             widths: ['*', 'auto', 100, '*'],
-
-            body: [
-              [{ text: 'Nombre', bold: true }, { text: 'Categoria', bold: true }, { text: 'Ubicacion', bold: true }, { text: 'Precio', bold: true }],
-              [this.listPrestamos[0].pelicula, this.listPrestamos[0].socio, this.listPrestamos[0].fechaPrestamo, this.listPrestamos[0].fechaDevolucion]
-            ]
-
-            
+            body: [tableHeader, ...tableBody]
           }
         }
-      ]
+      ],
+      styles: {
+        title: { fontSize: 18, bold: true, margin: [0, 0, 0, 10] }
+      }
     };
+  
     pdfMake.createPdf(documentDefinition).open();
-}
+  }
+  
+  
+  
+  
   obtenerPrestamos(){
     this._prestamosService.getPrestamos().subscribe(data => {
       console.log(data);

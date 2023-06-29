@@ -33,9 +33,6 @@ exports.realizarPrestamo = async (req, res) => {
   }
 };
 
-
-
-
 exports.listarPrestamos = async (req, res) => {
   try {
     const prestamos = await Prestamo.find();
@@ -65,6 +62,27 @@ exports.obtenerSocio = async (req, res) => {
   try {
       const socio = await Socio.find();
       res.json(socio);
+      
+  } catch (error) {
+      console.log(error);
+      res.status(500).send('Hubo un error');
+  }
+
+}
+
+exports.eliminarPrestamo = async (req, res) => {
+
+  try {
+
+      let prestamo = await Prestamo.findById(req.params.id);
+
+      if(!prestamo){
+          res.status(404).json({ msg: 'No existe el prestamo'});
+      }
+
+      prestamo = await Prestamo.findOneAndRemove(req.params.id);
+
+      res.json({ msg: 'El prestamo: ' + prestamo.prestamo + ' se ha eliminado' });
       
   } catch (error) {
       console.log(error);
